@@ -1,13 +1,130 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --font-header: 'Pinyon Script', cursive;
+    --font-body: 'Nunito', sans-serif;
+  
+    --color-bg: #fdf9f4;
+    --color-text: #222;
+    --color-accent: #b95e7c;
+    --color-highlight: #ffd5d9;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-header);
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+    color: var(--color-accent);
+  }
+
+  .card {
+    background: white;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 600px;
+    box-shadow: 5px -3px 6px rgba(0, 0, 0, 0.05);
+    font-family: var(--font-body);
+    position: relative; 
+    overflow: hidden;   
+  }
+  
+  /* Shared input style */
+.formInput,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: .5rem;
 }
+
+input {
+    border-radius: 5px;
+    padding: .5rem;
+    border: 1px solid #ccc;
+}
+
+.buttonPrimary {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-family: var(--font-body);
+}
+
+.buttonPrimary:hover {
+  background-color: #9e4665;
+}
+
+.wrapper {
+    margin-bottom: 1rem;
+}
+
+.performance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "date time"
+      "location location";
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .performance-grid input[type="date"] {
+    grid-area: date;
+  }
+  
+  .performance-grid input[type="time"] {
+    grid-area: time;
+  }
+  
+  .performance-grid input:not([type="date"]):not([type="time"]) {
+    grid-area: location;
+  }
+
+  .guests-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "name title"
+      "description description";
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .guests-grid .name {
+    grid-area: name;
+  }
+  
+  .guests-grid .title {
+    grid-area: title;
+  }
+  
+  .guests-grid .description {
+    grid-area: description;
+  }
+
+  .right {
+    align-items: flex-end;
+  }

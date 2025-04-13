@@ -1,0 +1,100 @@
+.zia {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    --zia-color: #b95e7c;
+    margin-left: -75px;
+    margin-top: -25px;
+}
+
+/* Center circle */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 36px;
+    height: 36px;
+    background: white;
+    border: 3px solid var(--zia-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Base bar */
+.arm {
+    position: absolute;
+    background-color: var(--zia-color);
+    border-radius: 999px;
+}
+
+/* Top arm (vertical bars) */
+.arm.top {
+    left: 38%;
+    width: 3px;
+    height: 50px;
+    transform: translateX(-50%);
+    box-shadow:
+        8px -8px 0 var(--zia-color),
+        16px -8px 0 var(--zia-color),
+        24px 0 0 var(--zia-color);
+}
+
+/* Bottom arm (vertical bars) */
+.arm.bottom {
+    left: 38%;
+    width: 3px;
+    height: 50px;
+    bottom: 0;
+    transform: translateX(-50%) rotate(180deg);
+    box-shadow:
+      -8px -8px 0 var(--zia-color),
+      -16px -8px 0 var(--zia-color),
+      -24px 0 0 var(--zia-color);
+}
+
+/* Left arm (horizontal bars) */
+.arm.left {
+    top: 62%;
+    height: 3px;
+    width: 50px;
+    left: 0;
+    transform: translateY(-50%);
+    box-shadow:
+        -8px -8px 0 var(--zia-color), 
+        -8px -16px 0 var(--zia-color), 
+        0px -24px 0 var(--zia-color);
+}
+
+/* Right arm (horizontal bars) */
+.arm.right {
+    top: 38%;
+    height: 3px;
+    width: 50px;
+    right: 0;
+    transform: translateY(-50%) rotate(180deg);
+    box-shadow:
+        -8px -8px 0 var(--zia-color), 
+        -8px -16px 0 var(--zia-color), 
+        0px -24px 0 var(--zia-color)
+}
+
+.arm.long-right {
+  top: 38%;
+  height: 3px;
+  width: 650px;
+  max-width: 90vw;
+  right: 0;
+  transform: translateX(90%) translateY(-50%) rotate(180deg);
+  box-shadow:
+      -8px -8px 0 var(--zia-color), 
+      -8px -16px 0 var(--zia-color), 
+      0px -24px 0 var(--zia-color)
+}
+
+.zia .note {
+    position: absolute;
+    bottom: 2.8rem;
+    color: var(--zia-color);
+    font-size: 1.7rem;
+}
+  

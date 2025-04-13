@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HomePage from './pages/Homepage';
+import CreateEventPage from './pages/CreateEventPage';
+import AdminDashboard from './pages/AdminDashboard';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<div>About Page</div>} />
+        <Route path="/previous" element={<div>Previous Events</div>} />
+        <Route path="/login" element={<div>Login Page</div>} />
+        <Route path="/create" element={<CreateEventPage />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/events/:id" element={<CreateEventPage />} />
+      </Routes>
+    </Router>
   );
 }
 

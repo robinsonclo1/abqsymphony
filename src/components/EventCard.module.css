@@ -1,0 +1,163 @@
+.card {
+  background: white;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  margin: 1rem auto 4rem;
+  max-width: 600px;
+  box-shadow: 5px -3px 6px rgba(0, 0, 0, 0.05);
+  font-family: var(--font-body);
+  position: relative; 
+  overflow: visible;   
+}
+
+  .eventTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-header);
+    color: var(--color-accent);
+  }
+  
+  .eventDescription {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .performance {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .performanceDate {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .featuredHeader {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .featuredGuest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: #f9f9f9;
+    font-family: var(--font-body);
+  }
+  
+  .featuredGuest img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+  
+  .featuredGuestInfo {
+    text-align: center;
+  }
+  
+  @media (min-width: 600px) {
+    .featuredGuest {
+      flex-direction: row;
+      gap: 1rem;
+      align-items: flex-start;
+      text-align: left;
+    }
+  
+    .featuredGuest img {
+      margin-bottom: 0;
+    }
+  }
+
+  .ziaFooter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Zia symbol center circle */
+  .ziaFooter::before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    bottom: 0.5rem;
+    width: 24px;
+    height: 24px;
+    background: var(--color-accent, #b95e7c);
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  
+  /* Zia rays (left + right bars) */
+  .ziaFooter::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      var(--color-accent, #b95e7c) 0%,
+      var(--color-accent, #b95e7c) 10%,
+      transparent 10%
+    );
+    z-index: 1;
+  }
+  
+  /* Floating music notes inside the bar */
+  .ziaFooter .note {
+    position: absolute;
+    font-size: 1.1rem;
+    animation: floatNote 6s infinite ease-in-out;
+  }
+  
+  .ziaFooter .note:nth-child(1) {
+    left: 30%;
+    animation-delay: 1s;
+  }
+  .ziaFooter .note:nth-child(2) {
+    left: 50%;
+    animation-delay: 1s;
+  }
+  .ziaFooter .note:nth-child(3) {
+    left: 70%;
+    animation-delay: 2s;
+  }
+  .ziaFooter .note:nth-child(4) {
+    left: 80%;
+    animation-delay: 3s;
+  }
+  
+  @keyframes floatNote {
+    0% {
+      transform: translateY(0);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-15px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0.8;
+    }
+  }
+  
+  
