@@ -27,10 +27,14 @@ export default function HomePage() {
   );
 
   return (
-    <div>
-      <h1>Upcoming Events</h1>
+    <div className='container'>
+      <div className='jumbotron'>
+        <h1>The Symphony of Albquerque</h1>
+        <p>A community orchestra offering free classical concerts for the whole family</p>
+      </div>
 
-      <ul style={{ listStyle: 'none', padding: 0 }}>
+      <h2>Upcoming Events</h2>
+      <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
         {upcomingEvents.map(event => (
           <li key={event.id}>
             <EventCard event={event} />

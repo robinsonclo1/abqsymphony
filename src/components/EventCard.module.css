@@ -2,7 +2,7 @@
   background: white;
   border-radius: 2rem;
   padding: 1.5rem;
-  margin: 1rem auto 4rem;
+  margin: 1rem 1rem 4rem;
   max-width: 600px;
   box-shadow: 5px -3px 6px rgba(0, 0, 0, 0.05);
   font-family: var(--font-body);
@@ -10,6 +10,11 @@
   overflow: visible;   
 }
 
+@media (min-width: 600px) {
+  .card {
+    margin: 1rem auto 4rem;
+  }
+}
   .eventTitle {
     font-size: 2.5rem;
     font-weight: 700;
@@ -36,7 +41,6 @@
   }
   
   .featuredHeader {
-    font-size: 1.5rem;
     font-weight: bold;
     margin-top: 2rem;
     text-align: center;

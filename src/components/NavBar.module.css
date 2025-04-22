@@ -14,7 +14,8 @@
   }
   
   .brand {
-    font-size: 1.25rem;
+    font-family: var(--font-header);
+    font-size: 2rem;
     font-weight: bold;
     color: white;
     text-decoration: none;

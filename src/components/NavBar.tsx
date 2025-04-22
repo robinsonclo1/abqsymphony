@@ -16,7 +16,7 @@ export default function NavBar() {
     aria-label="Homepage"
     aria-current={location.pathname === '/' ? 'page' : undefined}
     >
-        🎻 Orchestra
+        🎻 Symphony of Albuquerque
     </Link>
 
     <button

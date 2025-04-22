@@ -9,8 +9,14 @@ interface Props {
 export default function EventCard({ event }: Props) {
   return (
     <section className={styles.card}>
-      <h2 className={styles.eventTitle}>{event.title}</h2>
+      <h3 className={styles.eventTitle}>{event.title}</h3>
       <p className={styles.eventDescription}>{event.description}</p>
+
+      {event.pieces.map((p, i) => (
+        <div className={styles.performance} key={i}>
+          <div><strong>{p.composer}</strong> - {p.title}</div>
+        </div>
+      ))}
 
       {event.performances.map((p, i) => (
         <div className={styles.performance} key={i}>

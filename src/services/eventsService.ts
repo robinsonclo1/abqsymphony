@@ -23,6 +23,7 @@ import {
         id: doc.id,
         title: data.title,
         description: data.description,
+        pieces: data.pieces || [],
         performances: data.performances || [],
         featuredGuests: data.featuredGuests || [],
       };
@@ -57,6 +58,7 @@ export async function fetchEventById(id: string): Promise<Event | null> {
     id: snapshot.id,
     title: data.title,
     description: data.description,
+    pieces: data.pieces || [],
     performances: data.performances || [],
     featuredGuests: data.featuredGuests || [],
   };
@@ -70,6 +72,7 @@ export async function updateEvent(id: string, event: Omit<Event, 'id'>): Promise
       ...p,
       date: p.date,
     })),
+    pieces: event.pieces || [],
     featuredGuests: event.featuredGuests || [],
   });
 }

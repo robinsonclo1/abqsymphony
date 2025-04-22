@@ -1,4 +1,19 @@
-export interface EventDateEntry {
+
+  export interface Event {
+    id: string;
+    title: string;
+    description: string;
+    pieces: EventPieceEntry[];
+    performances: EventDateEntry[];
+    featuredGuests: FeaturedGuest[];
+  }
+  
+  export interface EventPieceEntry {
+    composer: string;
+    title: string;
+  }  
+
+  export interface EventDateEntry {
     date: string;
     time: string;
     location: string;
@@ -9,13 +24,5 @@ export interface EventDateEntry {
     title: string;
     description: string;
     imageUrl?: string;
-  }
-  
-  export interface Event {
-    id: string;
-    title: string;
-    description: string;
-    performances: EventDateEntry[];
-    featuredGuests: FeaturedGuest[];
   }
   
